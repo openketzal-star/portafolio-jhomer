@@ -1,5 +1,5 @@
 import { Link, Outlet } from 'react-router-dom';
-import { GitHub, LinkedIn, Mail, Menu, X } from 'lucide-react';
+import { Github, Linkedin, Mail, Menu, X } from 'lucide-react';
 import { useState } from 'react';
 
 const MainLayout = () => {
@@ -14,8 +14,8 @@ const MainLayout = () => {
   ];
 
   const socialLinks = [
-    { icon: GitHub, href: 'https://github.com/jhomer', label: 'GitHub' },
-    { icon: LinkedIn, href: 'https://linkedin.com/in/jhomer', label: 'LinkedIn' },
+    { icon: Github, href: 'https://github.com/jhomer', label: 'GitHub' },
+    { icon: Linkedin, href: 'https://linkedin.com/in/jhomer', label: 'LinkedIn' },
     { icon: Mail, href: 'mailto:jhomer@example.com', label: 'Email' },
   ];
 
