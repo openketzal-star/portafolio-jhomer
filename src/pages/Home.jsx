@@ -1,10 +1,8 @@
-import { ArrowRight, Code, Video, Search, Sparkles, Zap, Globe } from 'lucide-react';
+import { ArrowRight, Code, Video, Search, Globe, Mail, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import ParticlesBackground from '../components/ParticlesBackground';
-import TypewriterText from '../components/TypewriterText';
-import AnimatedCounter from '../components/AnimatedCounter';
+import { projects, categories } from '../data/projects';
 
 const Home = () => {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
@@ -23,60 +21,21 @@ const Home = () => {
       icon: Code,
       title: 'Desarrollo con IA',
       description: 'Aplicaciones web y móviles potenciadas por IA, usando OpenAI, LangChain y más.',
-      color: 'from-blue-500 to-cyan-400',
-      iconColor: 'text-blue-500',
     },
     {
       icon: Video,
       title: 'Contenido Educativo',
       description: 'Tutoriales, guías y experiencias sobre programación con IA en YouTube y TikTok.',
-      color: 'from-purple-500 to-pink-400',
-      iconColor: 'text-purple-500',
     },
     {
       icon: Search,
       title: 'Estrategia Digital',
       description: 'Marketing, análisis de mercado y estrategias de crecimiento para productos digitales.',
-      color: 'from-green-500 to-emerald-400',
-      iconColor: 'text-green-500',
     },
     {
       icon: Globe,
       title: 'Consultoría Tecnológica',
       description: 'Asesoramiento en adopción de IA, transformación digital y optimización de procesos.',
-      color: 'from-orange-500 to-yellow-400',
-      iconColor: 'text-orange-500',
-    },
-  ];
-
-  const featuredProjects = [
-    {
-      title: 'Asistente de Marketing con IA',
-      description: 'Herramienta que genera estrategias de contenido y copy usando GPT-4, analizando tendencias.',
-      tags: ['Python', 'OpenAI', 'Streamlit', 'FastAPI'],
-      gradient: 'from-blue-500 to-purple-600',
-      link: '/proyectos/asistente-ia',
-    },
-    {
-      title: 'Curso Interactivo de IA',
-      description: 'Plataforma educativa con ejercicios prácticos de programación con IA, usando notebooks interactivos.',
-      tags: ['Jupyter', 'React', 'FastAPI', 'Tailwind'],
-      gradient: 'from-green-500 to-teal-600',
-      link: '/proyectos/curso-ia',
-    },
-    {
-      title: 'Dashboard de Analytics',
-      description: 'Panel de control en tiempo real para métricas de marketing, con visualizaciones avanzadas.',
-      tags: ['React', 'D3.js', 'Node.js', 'MongoDB'],
-      gradient: 'from-rose-500 to-pink-600',
-      link: '/proyectos/dashboard',
-    },
-    {
-      title: 'Chatbot Multilenguaje',
-      description: 'Asistente conversacional capaz de entender múltiples idiomas y contextos empresariales.',
-      tags: ['Python', 'Transformers', 'WebSockets', 'Docker'],
-      gradient: 'from-amber-500 to-orange-600',
-      link: '/proyectos/chatbot',
     },
   ];
 
@@ -85,7 +44,7 @@ const Home = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
+        staggerChildren: 0.1,
       },
     },
   };
@@ -95,83 +54,50 @@ const Home = () => {
     visible: {
       y: 0,
       opacity: 1,
-      transition: { duration: 0.5 },
+      transition: { duration: 0.4 },
     },
   };
 
   return (
-    <div className="space-y-24 md:space-y-32">
-      {/* BANNER GIGANTE - CAMBIO VISIBLE */}
-      <div className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 text-white text-center py-4 animate-pulse shadow-2xl">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-center space-x-4">
-            <Sparkles className="animate-spin-slow" size={24} />
-            <span className="text-2xl md:text-3xl font-bold">✨ ¡NUEVO DISEÑO TOTALMENTE RENOVADO! ✨</span>
-            <Sparkles className="animate-spin-slow" size={24} />
-          </div>
-          <p className="mt-2 text-lg opacity-90">Con efectos de partículas, animaciones avanzadas y mejoras UX/UI</p>
-        </div>
-      </div>
-
+    <div className="space-y-20 md:space-y-28">
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-32">
-        <ParticlesBackground />
-        <div className="absolute inset-0 bg-gradient-to-br from-pink-100/40 via-blue-100/20 to-purple-100/40 dark:from-gray-900/50 dark:via-gray-900 dark:to-gray-900/50" />
-        <div className="relative z-10 container mx-auto px-4 text-center">
+      <section className="min-h-[90vh] flex items-center justify-center pt-20">
+        <div className="container mx-auto px-4 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-6xl mx-auto"
+            transition={{ duration: 0.6 }}
+            className="max-w-4xl mx-auto"
           >
-            <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-pink-500 to-blue-500 text-white mb-8 animate-pulse-slow shadow-lg">
-              <Sparkles className="mr-3" size={20} />
-              <span className="font-bold text-lg">🚀 Transformando ideas en realidades digitales</span>
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 mb-6">
+              <Sparkles className="mr-2" size={16} />
+              <span className="font-medium">Transformando estrategias de marketing en soluciones de IA escalables</span>
             </div>
-            <h1 className="text-5xl md:text-8xl font-bold mb-8 leading-tight">
-              <span className="block text-gray-800 dark:text-gray-200">Hola, soy </span>
-              <span className="text-gradient bg-gradient-to-r from-pink-600 via-purple-600 to-blue-600 animate-gradient">
-                <TypewriterText text="JHOMER" speed={80} delay={300} />
-              </span>
+            <h1 className="text-4xl md:text-7xl font-bold mb-6 leading-tight">
+              <span className="block text-gray-800 dark:text-gray-200">Jhomer</span>
+              <span className="block text-primary-600 dark:text-primary-400 mt-2">Estrategia digital → Desarrollo con IA</span>
             </h1>
-            <p className="text-2xl md:text-3xl text-gray-800 dark:text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
-              <TypewriterText
-                text="Management & Marketing profesional aprendiendo programación con IA."
-                speed={25}
-                delay={1000}
-              />
-              <br />
-              <span className="text-xl md:text-2xl text-gray-700 dark:text-gray-400 mt-4 inline-block">
-                Creo aplicaciones impulsadas por IA y comparto el viaje en YouTube y TikTok.
-              </span>
+            <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-10 max-w-3xl mx-auto leading-relaxed">
+              Profesional de marketing con 4+ años de experiencia, ahora especializado en inteligencia artificial. 
+              Construyo aplicaciones que resuelven problemas reales de negocio mediante código y algoritmos.
             </p>
-            <motion.div
-              className="flex flex-wrap justify-center gap-6"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 2, duration: 0.5 }}
-            >
+            <div className="flex flex-wrap justify-center gap-4">
               <Link
-                to="/proyectos"
-                className="group inline-flex items-center px-10 py-5 bg-gradient-to-r from-pink-600 to-purple-600 text-white font-bold rounded-2xl hover:shadow-2xl hover:scale-110 transition-all duration-300 shadow-xl"
+                to="#projects"
+                className="inline-flex items-center px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-colors"
               >
-                <span className="text-lg">🚀 Explorar Proyectos</span>
-                <ArrowRight className="ml-4 group-hover:translate-x-3 transition-transform" size={24} />
+                <span>Ver proyectos con IA</span>
+                <ArrowRight className="ml-2" size={18} />
               </Link>
               <Link
                 to="/contacto"
-                className="group inline-flex items-center px-10 py-5 border-3 border-pink-500 text-pink-600 dark:text-pink-400 font-bold rounded-2xl hover:bg-pink-50 dark:hover:bg-pink-900/20 hover:shadow-xl hover:scale-105 transition-all duration-300"
+                className="inline-flex items-center px-6 py-3 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-medium rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
               >
-                <Zap className="mr-4 group-hover:rotate-180 transition-transform duration-500" size={22} />
-                <span className="text-lg">⚡ Colaborar Juntos</span>
+                <Mail className="mr-2" size={18} />
+                <span>Conversar sobre tu idea</span>
               </Link>
-            </motion.div>
+            </div>
           </motion.div>
-        </div>
-        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce-slow">
-          <div className="w-8 h-12 border-3 border-pink-500 rounded-full flex justify-center">
-            <div className="w-2 h-4 bg-gradient-to-b from-pink-500 to-purple-500 rounded-full mt-3 animate-pulse" />
-          </div>
         </div>
       </section>
 
@@ -181,20 +107,18 @@ const Home = () => {
           variants={containerVariants}
           initial="hidden"
           animate={inView ? 'visible' : 'hidden'}
-          className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8"
+          className="grid grid-cols-2 md:grid-cols-4 gap-4"
         >
-          {stats.map((stat, index) => (
+          {stats.map((stat) => (
             <motion.div
               key={stat.label}
               variants={itemVariants}
-              className="text-center p-8 rounded-3xl bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 hover-lift shadow-lg hover:shadow-2xl transition-all duration-500"
+              className="text-center p-6 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900"
             >
-              <div className="text-4xl md:text-5xl font-bold text-gradient bg-gradient-to-r from-primary-600 to-secondary-600 mb-3">
-                <AnimatedCounter value={stat.value} />
-                {stat.suffix}
+              <div className="text-3xl md:text-4xl font-bold text-primary-600 dark:text-primary-400 mb-2">
+                {stat.value}{stat.suffix}
               </div>
-              <div className="text-gray-700 dark:text-gray-300 font-medium text-lg">{stat.label}</div>
-              <div className="mt-4 h-1 w-12 mx-auto bg-gradient-to-r from-primary-500 to-transparent rounded-full" />
+              <div className="text-gray-600 dark:text-gray-400 text-sm md:text-base">{stat.label}</div>
             </motion.div>
           ))}
         </motion.div>
@@ -203,168 +127,150 @@ const Home = () => {
       {/* Services */}
       <section ref={servicesRef} className="container mx-auto px-4">
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={servicesInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7 }}
-          className="text-center mb-16"
+          transition={{ duration: 0.6 }}
+          className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Lo que <span className="text-gradient">ofrezco</span>
-          </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            Servicios especializados que combinan tecnología de vanguardia con estrategias de crecimiento probadas.
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Servicios que unen marketing y tecnología</h2>
+          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            Soluciones prácticas donde la estrategia de negocio se encuentra con la inteligencia artificial.
           </p>
         </motion.div>
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate={servicesInView ? 'visible' : 'hidden'}
-          className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+          className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
         >
-          {services.map((service, index) => (
+          {services.map((service) => (
             <motion.div
               key={service.title}
               variants={itemVariants}
-              className="group p-8 rounded-3xl border-2 border-gray-200 dark:border-gray-800 hover:border-transparent bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 hover:shadow-2xl hover:scale-105 transition-all duration-500 hover:bg-gradient-to-br hover:from-white hover:to-primary-50 dark:hover:from-gray-800 dark:hover:to-primary-900/20"
+              className="p-6 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 hover:shadow-md transition-shadow"
             >
-              <div className={`inline-flex p-4 rounded-2xl mb-6 bg-gradient-to-r ${service.color} shadow-lg`}>
-                <service.icon className={`${service.iconColor} text-white`} size={28} />
+              <div className="inline-flex p-3 rounded-lg bg-primary-50 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 mb-4">
+                <service.icon size={24} />
               </div>
-              <h3 className="text-2xl font-bold mb-4 group-hover:text-primary-700 dark:group-hover:text-primary-400 transition-colors">
-                {service.title}
-              </h3>
-              <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+              <h3 className="text-xl font-bold mb-3">{service.title}</h3>
+              <p className="text-gray-600 dark:text-gray-400 mb-4">
                 {service.description}
               </p>
               <Link
-                to="/proyectos"
-                className="inline-flex items-center text-primary-600 dark:text-primary-400 font-semibold group-hover:underline"
+                to="#projects"
+                className="inline-flex items-center text-primary-600 dark:text-primary-400 font-medium text-sm"
               >
-                Explorar casos
-                <ArrowRight className="ml-2 group-hover:translate-x-2 transition-transform" size={18} />
+                Ver casos de uso
+                <ArrowRight className="ml-1" size={16} />
               </Link>
             </motion.div>
           ))}
         </motion.div>
       </section>
 
-      {/* Featured Projects */}
-      <section ref={projectsRef} className="container mx-auto px-4">
+      {/* Projects */}
+      <section id="projects" ref={projectsRef} className="container mx-auto px-4">
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={projectsInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7 }}
-          className="flex justify-between items-center mb-16"
+          transition={{ duration: 0.6 }}
+          className="mb-12"
         >
-          <div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Proyectos <span className="text-gradient">Destacados</span>
-            </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400">
-              Una selección de mis trabajos más innovadores y desafiantes.
-            </p>
-          </div>
-          <Link
-            to="/proyectos"
-            className="hidden md:inline-flex items-center px-6 py-3 border-2 border-primary-600 dark:border-primary-400 text-primary-600 dark:text-primary-400 font-bold rounded-xl hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:scale-105 transition-all duration-300"
-          >
-            Ver todos
-            <ArrowRight className="ml-3" size={20} />
-          </Link>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">Proyectos con impacto real</h2>
+          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-center">
+            Cada aplicación resuelve un problema específico de marketing o negocio mediante IA.
+          </p>
         </motion.div>
+
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate={projectsInView ? 'visible' : 'hidden'}
-          className="grid md:grid-cols-2 gap-8"
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          {featuredProjects.map((project, index) => (
+          {projects.map((project) => (
             <motion.div
-              key={project.title}
+              key={project.id}
               variants={itemVariants}
-              className="group relative overflow-hidden rounded-3xl border border-gray-200 dark:border-gray-800 hover:shadow-2xl transition-all duration-500 hover-tilt"
+              className="rounded-xl border border-gray-200 dark:border-gray-800 overflow-hidden bg-white dark:bg-gray-900 hover:shadow-lg transition-shadow"
             >
-              <div className={`h-56 ${project.gradient} bg-gradient-to-r relative overflow-hidden`}>
-                <div className="absolute inset-0 bg-black/10 group-hover:bg-black/30 transition-colors duration-500" />
-                <div className="absolute bottom-4 left-6 right-6 text-white">
-                  <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
-                </div>
+              <div className="h-48 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 flex items-center justify-center">
+                <div className="text-4xl text-gray-400 dark:text-gray-600">📊</div>
               </div>
-              <div className="p-8 bg-white dark:bg-gray-900">
-                <p className="text-gray-600 dark:text-gray-400 mb-6">
+              <div className="p-6">
+                <div className="flex justify-between items-start mb-3">
+                  <h3 className="text-xl font-bold">{project.title}</h3>
+                  {project.featured && (
+                    <span className="px-2 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 text-xs font-medium rounded">
+                      Destacado
+                    </span>
+                  )}
+                </div>
+                <p className="text-gray-600 dark:text-gray-400 mb-4">
                   {project.description}
                 </p>
-                <div className="flex flex-wrap gap-3 mb-6">
-                  {project.tags.map((tag) => (
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {project.technologies.slice(0, 3).map((tech) => (
                     <span
-                      key={tag}
-                      className="px-4 py-2 bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 text-gray-800 dark:text-gray-300 rounded-full text-sm font-medium"
+                      key={tech}
+                      className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full text-xs"
                     >
-                      {tag}
+                      {tech}
                     </span>
                   ))}
+                  {project.technologies.length > 3 && (
+                    <span className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-500 rounded-full text-xs">
+                      +{project.technologies.length - 3}
+                    </span>
+                  )}
                 </div>
-                <Link
-                  to={project.link}
-                  className="inline-flex items-center text-primary-600 dark:text-primary-400 font-bold group-hover:underline"
-                >
-                  Ver detalles
-                  <ArrowRight className="ml-3 group-hover:translate-x-2 transition-transform" size={18} />
-                </Link>
-              </div>
-              <div className="absolute top-4 right-4">
-                <div className="w-12 h-12 rounded-full bg-white/20 dark:bg-black/20 backdrop-blur-sm flex items-center justify-center">
-                  <Zap className="text-white" size={20} />
+                <div className="flex gap-3">
+                  <a
+                    href={project.demoUrl}
+                    className="flex-1 text-center px-4 py-2 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-colors text-sm"
+                  >
+                    Ver demo
+                  </a>
+                  <a
+                    href={project.githubUrl}
+                    className="flex-1 text-center px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-medium rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors text-sm"
+                  >
+                    Código
+                  </a>
                 </div>
               </div>
             </motion.div>
           ))}
         </motion.div>
-        <div className="text-center mt-12 md:hidden">
-          <Link
-            to="/proyectos"
-            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-600 to-accent-600 text-white font-bold rounded-2xl hover:shadow-xl hover:scale-105 transition-all duration-300"
-          >
-            Ver todos los proyectos
-            <ArrowRight className="ml-3" size={22} />
-          </Link>
-        </div>
       </section>
 
       {/* CTA */}
       <section className="container mx-auto px-4">
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7 }}
-          className="relative rounded-4xl overflow-hidden bg-gradient-to-r from-primary-600 via-accent-600 to-secondary-600 p-12 md:p-16 text-center"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="rounded-2xl bg-gray-50 dark:bg-gray-800 p-8 md:p-12 text-center"
         >
-          <div className="absolute inset-0 bg-black/20" />
-          <div className="relative z-10 max-w-4xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              ¿Listo para llevar tu proyecto al siguiente nivel?
-            </h2>
-            <p className="text-xl text-white/90 mb-10">
-              Colaboremos para crear algo extraordinario con la potencia de la IA y el diseño moderno.
-            </p>
-            <div className="flex flex-wrap justify-center gap-6">
-              <Link
-                to="/contacto"
-                className="inline-flex items-center px-10 py-5 bg-white text-primary-700 font-bold rounded-2xl hover:bg-gray-100 hover:scale-105 transition-all duration-300 shadow-2xl"
-              >
-                <Sparkles className="mr-3" size={22} />
-                Iniciar Conversación
-              </Link>
-              <Link
-                to="/proyectos"
-                className="inline-flex items-center px-10 py-5 border-2 border-white text-white font-bold rounded-2xl hover:bg-white/10 hover:scale-105 transition-all duration-300"
-              >
-                Explorar Proyectos
-              </Link>
-            </div>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">¿Listo para llevar tu proyecto al siguiente nivel?</h2>
+          <p className="text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
+            Colaboremos para crear algo extraordinario con la potencia de la IA y el diseño moderno.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link
+              to="/contacto"
+              className="inline-flex items-center px-8 py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-colors"
+            >
+              <Mail className="mr-2" size={20} />
+              Iniciar Conversación
+            </Link>
+            <Link
+              to="#projects"
+              className="inline-flex items-center px-8 py-3 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-medium rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+            >
+              Explorar más proyectos
+            </Link>
           </div>
-          <div className="absolute top-0 left-0 w-64 h-64 bg-white/10 rounded-full -translate-x-32 -translate-y-32 blur-3xl" />
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent-500/20 rounded-full translate-x-48 translate-y-48 blur-3xl" />
         </motion.div>
       </section>
     </div>

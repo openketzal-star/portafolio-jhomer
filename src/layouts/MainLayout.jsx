@@ -1,5 +1,5 @@
 import { Link, Outlet, useLocation } from 'react-router-dom';
-import { Menu, X, Home, FolderKanban, FileText, User, Mail, ChevronUp, Sparkles } from 'lucide-react';
+import { Menu, X, Home, User, Mail, ChevronUp, Sparkles } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -11,8 +11,6 @@ const MainLayout = () => {
 
   const navItems = [
     { path: '/', label: 'Inicio', icon: Home },
-    { path: '/proyectos', label: 'Proyectos', icon: FolderKanban },
-    { path: '/blog', label: 'Blog', icon: FileText },
     { path: '/sobre-mi', label: 'Sobre mí', icon: User },
     { path: '/contacto', label: 'Contacto', icon: Mail },
   ];
@@ -217,7 +215,7 @@ const MainLayout = () => {
                 ))}
               </div>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-8 lg:w-1/2">
+            <div className="grid grid-cols-2 gap-8 lg:w-1/2">
               <div>
                 <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-4">Navegación</h4>
                 <ul className="space-y-3">
@@ -234,31 +232,7 @@ const MainLayout = () => {
                   ))}
                 </ul>
               </div>
-              <div>
-                <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-4">Recursos</h4>
-                <ul className="space-y-3">
-                  <li>
-                    <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
-                      Blog
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
-                      Tutoriales
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
-                      Herramientas
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
-                      Comunidad
-                    </a>
-                  </li>
-                </ul>
-              </div>
+
               <div>
                 <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-4">Legal</h4>
                 <ul className="space-y-3">
