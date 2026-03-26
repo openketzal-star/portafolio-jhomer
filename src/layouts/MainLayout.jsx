@@ -54,7 +54,7 @@ const MainLayout = () => {
                   className="p-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
                   aria-label={social.label}
                 >
-                  <<span className="text-xl">{social.emoji}</span> />
+                  <span className="text-xl">{social.emoji}</span>
                 </a>
               ))}
             </div>
@@ -93,7 +93,7 @@ const MainLayout = () => {
                       className="p-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
                       aria-label={social.label}
                     >
-                      <<span className="text-xl">{social.emoji}</span> />
+                      <span className="text-xl">{social.emoji}</span>
                     </a>
                   ))}
                 </div>
@@ -130,7 +130,7 @@ const MainLayout = () => {
                   className="p-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
                   aria-label={social.label}
                 >
-                  <<span className="text-xl">{social.emoji}</span> />
+                  <span className="text-xl">{social.emoji}</span>
                 </a>
               ))}
             </div>
