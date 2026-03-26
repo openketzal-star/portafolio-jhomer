@@ -1,16 +1,96 @@
-# React + Vite
+# Portafolio Jhomer - Moderno y Animado
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Un portafolio profesional con diseño avanzado, animaciones fluidas y efectos interactivos, construido con React, Tailwind CSS y Framer Motion.
 
-Currently, two official plugins are available:
+## 🚀 Características Mejoradas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### 🎨 **Diseño & UI/UX**
+- **Diseño visual moderno** con gradientes animados, sombras y bordes redondeados.
+- **Sistema de color** extendido (primary, secondary, accent) con soporte para modo oscuro/claro.
+- **Tipografía mejorada** con Inter, Poppins y JetBrains Mono.
+- **Efectos de vidrio** (glassmorphism) en navegación y tarjetas.
+- **Responsive design** optimizado para móviles, tablets y escritorio.
 
-## React Compiler
+### ✨ **Efectos & Animaciones**
+- **Fondo de partículas interactivas** en la sección Hero (usando tsparticles).
+- **Texto mecanográfico** (typewriter) en títulos y descripciones.
+- **Contadores animados** para estadísticas (conteo progresivo).
+- **Animaciones al hacer scroll** con react-intersection-observer y Framer Motion.
+- **Efectos de hover** en tarjetas (levitación, inclinación 3D, sombras).
+- **Transiciones suaves** entre páginas y elementos.
+- **Barra de progreso de scroll** en la parte superior.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 🧩 **Componentes Avanzados**
+- **Navegación inteligente** con indicador de ruta activa y animación spring.
+- **Header dinámico** que cambia al hacer scroll (blur, sombra).
+- **Botón de "volver arriba"** que aparece automáticamente.
+- **Menú móvil** con animaciones de apertura/cierre.
+- **Tarjetas de servicios** con gradientes e iconos animados.
+- **Grid de proyectos** con efectos de tilt y overlays.
 
-## Expanding the ESLint configuration
+### 🛠 **Tecnologías Utilizadas**
+- **React 19** + **React Router DOM**
+- **Tailwind CSS** con configuración extendida (keyframes, animations)
+- **Framer Motion** para animaciones avanzadas
+- **React Intersection Observer** para animaciones al scroll
+- **TSParticles** para fondos de partículas
+- **Lucide React** para iconos
+- **Vite** como bundler rápido
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🏗️ Estructura del Proyecto
+
+```
+src/
+├── components/           # Componentes reutilizables
+│   ├── ParticlesBackground.jsx
+│   ├── TypewriterText.jsx
+│   └── AnimatedCounter.jsx
+├── layouts/             # Layouts (MainLayout)
+├── pages/              # Páginas (Home, Projects, About, etc.)
+├── index.css           # Estilos globales y utilidades
+└── App.jsx             # Configuración de rutas
+```
+
+## 🚀 Cómo Ejecutar
+
+1. **Instalar dependencias** (si aún no lo has hecho):
+   ```bash
+   npm install
+   ```
+
+2. **Ejecutar en desarrollo**:
+   ```bash
+   npm run dev
+   ```
+
+3. **Construir para producción**:
+   ```bash
+   npm run build
+   ```
+
+4. **Previsualizar build**:
+   ```bash
+   npm run preview
+   ```
+
+## 🎨 Personalización
+
+- **Colores**: Edita `tailwind.config.js` en la sección `colors`.
+- **Fuentes**: Cambia las fuentes en `tailwind.config.js` y en `index.html`.
+- **Contenido**: Modifica los textos en `src/pages/Home.jsx` y otros componentes.
+- **Animaciones**: Ajusta keyframes y duraciones en `tailwind.config.js`.
+
+## 📱 Compatibilidad
+
+- ✅ Navegadores modernos (Chrome, Firefox, Safari, Edge)
+- ✅ Soporte completo para modo oscuro/claro
+- ✅ Responsive en todos los dispositivos
+- ✅ Optimizado para performance (LCP, CLS, FID)
+
+## 📄 Licencia
+
+Este proyecto es de uso personal. Puedes modificarlo y adaptarlo a tus necesidades.
+
+---
+
+**Creado con ❤️ por Jhomer** - Management & Marketing profesional aprendiendo programación con IA.
