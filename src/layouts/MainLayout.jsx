@@ -1,5 +1,5 @@
 import { Link, Outlet } from 'react-router-dom';
-import { Github, Linkedin, Mail, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 
 const MainLayout = () => {
@@ -14,9 +14,9 @@ const MainLayout = () => {
   ];
 
   const socialLinks = [
-    { icon: Github, href: 'https://github.com/jhomer', label: 'GitHub' },
-    { icon: Linkedin, href: 'https://linkedin.com/in/jhomer', label: 'LinkedIn' },
-    { icon: Mail, href: 'mailto:jhomer@example.com', label: 'Email' },
+    { emoji: '🐙', href: 'https://github.com/jhomer', label: 'GitHub' },
+    { emoji: '💼', href: 'https://linkedin.com/in/jhomer', label: 'LinkedIn' },
+    { emoji: '✉️', href: 'mailto:jhomer@example.com', label: 'Email' },
   ];
 
   return (
@@ -54,7 +54,7 @@ const MainLayout = () => {
                   className="p-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
                   aria-label={social.label}
                 >
-                  <social.icon size={20} />
+                  <<span className="text-xl">{social.emoji}</span> />
                 </a>
               ))}
             </div>
@@ -93,7 +93,7 @@ const MainLayout = () => {
                       className="p-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
                       aria-label={social.label}
                     >
-                      <social.icon size={20} />
+                      <<span className="text-xl">{social.emoji}</span> />
                     </a>
                   ))}
                 </div>
@@ -130,7 +130,7 @@ const MainLayout = () => {
                   className="p-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
                   aria-label={social.label}
                 >
-                  <social.icon size={20} />
+                  <<span className="text-xl">{social.emoji}</span> />
                 </a>
               ))}
             </div>

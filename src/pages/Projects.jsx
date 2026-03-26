@@ -1,4 +1,4 @@
-import { ExternalLink, Github, Filter } from 'lucide-react';
+import { ExternalLink, Filter } from 'lucide-react';
 import { useState } from 'react';
 
 const Projects = () => {
@@ -171,7 +171,7 @@ const Projects = () => {
                       className="inline-flex items-center text-gray-600 dark:text-gray-400 font-medium hover:underline"
                     >
                       Código
-                      <Github className="ml-1" size={16} />
+                      <span className="ml-1">🐙</span>
                     </a>
                   )}
                 </div>
