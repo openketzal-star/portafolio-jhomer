@@ -4,41 +4,15 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { projects, categories } from '../data/projects';
 import HeroSection from '../components/sections/HeroSection';
+import StatsSection from '../components/sections/StatsSection';
+import ServicesSection from '../components/sections/ServicesSection';
 
 const Home = () => {
-  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
-  const [servicesRef, servicesInView] = useInView({ triggerOnce: true, threshold: 0.1 });
   const [projectsRef, projectsInView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
-  const stats = [
-    { label: 'Proyectos con IA', value: 5, suffix: '+' },
-    { label: 'Años en Marketing', value: 4, suffix: '+' },
-    { label: 'Videos Producidos', value: 50, suffix: '+' },
-    { label: 'Herramientas de IA', value: 10, suffix: '+' },
-  ];
 
-  const services = [
-    {
-      icon: Code,
-      title: 'Desarrollo con IA',
-      description: 'Aplicaciones web y móviles potenciadas por IA, usando OpenAI, LangChain y más.',
-    },
-    {
-      icon: Video,
-      title: 'Contenido Educativo',
-      description: 'Tutoriales, guías y experiencias sobre programación con IA en YouTube y TikTok.',
-    },
-    {
-      icon: Search,
-      title: 'Estrategia Digital',
-      description: 'Marketing, análisis de mercado y estrategias de crecimiento para productos digitales.',
-    },
-    {
-      icon: Globe,
-      title: 'Consultoría Tecnológica',
-      description: 'Asesoramiento en adopción de IA, transformación digital y optimización de procesos.',
-    },
-  ];
+
+
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -63,72 +37,9 @@ const Home = () => {
     <div className="space-y-20 md:space-y-28">
       <HeroSection />
 
-      {/* Stats */}
-      <section ref={ref} className="container mx-auto px-4">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate={inView ? 'visible' : 'hidden'}
-          className="grid grid-cols-2 md:grid-cols-4 gap-4"
-        >
-          {stats.map((stat) => (
-            <motion.div
-              key={stat.label}
-              variants={itemVariants}
-              className="text-center p-6 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900"
-            >
-              <div className="text-3xl md:text-4xl font-bold text-primary-600 dark:text-primary-400 mb-2">
-                {stat.value}{stat.suffix}
-              </div>
-              <div className="text-gray-600 dark:text-gray-400 text-sm md:text-base">{stat.label}</div>
-            </motion.div>
-          ))}
-        </motion.div>
-      </section>
+      <StatsSection />
 
-      {/* Services */}
-      <section ref={servicesRef} className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={servicesInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Servicios que unen marketing y tecnología</h2>
-          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Soluciones prácticas donde la estrategia de negocio se encuentra con la inteligencia artificial.
-          </p>
-        </motion.div>
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate={servicesInView ? 'visible' : 'hidden'}
-          className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
-        >
-          {services.map((service) => (
-            <motion.div
-              key={service.title}
-              variants={itemVariants}
-              className="p-6 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 hover:shadow-md transition-shadow"
-            >
-              <div className="inline-flex p-3 rounded-lg bg-primary-50 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 mb-4">
-                <service.icon size={24} />
-              </div>
-              <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-              <p className="text-gray-600 dark:text-gray-400 mb-4">
-                {service.description}
-              </p>
-              <a
-                href="#projects"
-                className="inline-flex items-center text-primary-600 dark:text-primary-400 font-medium text-sm"
-              >
-                Ver casos de uso
-                <ArrowRight className="ml-1" size={16} />
-              </a>
-            </motion.div>
-          ))}
-        </motion.div>
-      </section>
+      <ServicesSection />
 
       {/* Projects */}
       <section id="projects" ref={projectsRef} className="container mx-auto px-4">
