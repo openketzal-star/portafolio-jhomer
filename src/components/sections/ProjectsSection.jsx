@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { projects, categories } from '../data/projects';
+import { projects, categories } from '../../data/projects';
 
 const ProjectsSection = () => {
   const [projectsRef, projectsInView] = useInView({ triggerOnce: true, threshold: 0.1 });
