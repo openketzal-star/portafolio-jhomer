@@ -122,7 +122,7 @@ const ProjectsSection = () => {
                 ? 'bg-gradient-to-r from-primary-600 to-primary-500 text-white shadow-lg shadow-primary-500/25'
                 : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
             }`}
-            whileHover={{ scale: shouldReduceMotion ? 1 : 1.05 }}
+            whileHover={{ scale: 1 }}
             whileTap={{ scale: 0.98 }}
             aria-pressed={activeFilter === category.id}
             aria-label={`Show ${category.label} projects (${category.count})`}
@@ -263,7 +263,7 @@ const ProjectsSection = () => {
                       <motion.a
                         href={project.demoUrl}
                         className="flex-1 flex items-center justify-center px-4 py-3 bg-gradient-to-r from-primary-600 to-primary-500 text-white font-medium rounded-xl hover:shadow-lg hover:shadow-primary-500/25 transition-all duration-300"
-                        whileHover={{ scale: shouldReduceMotion ? 1 : 1.02 }}
+                        whileHover={{ scale: 1 }}
                         whileTap={{ scale: 0.98 }}
                         aria-label={`View demo of ${project.title}`}
                       >
@@ -273,7 +273,7 @@ const ProjectsSection = () => {
                       <motion.a
                         href={project.githubUrl}
                         className="flex-1 flex items-center justify-center px-4 py-3 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-medium rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-300"
-                        whileHover={{ scale: shouldReduceMotion ? 1 : 1.02 }}
+                        whileHover={{ scale: 1 }}
                         whileTap={{ scale: 0.98 }}
                         aria-label={`View source code of ${project.title}`}
                       >
@@ -322,7 +322,7 @@ const ProjectsSection = () => {
         <motion.a
           href="#contact"
           className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-gray-900 to-black dark:from-white dark:to-gray-200 text-white dark:text-gray-900 font-bold rounded-2xl text-lg shadow-xl hover:shadow-2xl transition-all duration-300"
-          whileHover={{ scale: shouldReduceMotion ? 1 : 1.05 }}
+          whileHover={{ scale: 1 }}
           whileTap={{ scale: 0.98 }}
           aria-label="Schedule a consultation about custom projects"
         >

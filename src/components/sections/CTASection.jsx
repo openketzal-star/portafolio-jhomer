@@ -200,9 +200,9 @@ const CTASection = () => {
               <div className="space-y-4 mb-8">
                 <motion.a
                   href="/contacto"
-                  className="block w-full py-4 px-6 bg-gradient-to-r from-primary-600 to-primary-500 text-white font-bold rounded-xl text-center shadow-lg hover:shadow-xl transition-all duration-300"
-                  whileHover={{ scale: shouldReduceMotion ? 1 : 1.02 }}
-                  whileTap={{ scale: 0.98 }}
+                  className="block w-full py-4 px-6 bg-gradient-to-r from-primary-600 to-primary-500 text-white font-bold rounded-xl text-center shadow-lg hover:shadow-md transition-all duration-200"
+                  whileHover={{ scale: 1 }}
+                  whileTap={{ scale: 0.99 }}
                   aria-label="Schedule a free consultation call"
                 >
                   <span className="flex items-center justify-center">
@@ -214,9 +214,9 @@ const CTASection = () => {
 
                 <motion.a
                   href="mailto:openketzal@gmail.com"
-                  className="block w-full py-4 px-6 border-2 border-gray-300 text-gray-800 font-bold rounded-xl text-center hover:bg-gray-50 transition-all duration-300"
-                  whileHover={{ scale: shouldReduceMotion ? 1 : 1.02 }}
-                  whileTap={{ scale: 0.98 }}
+                  className="block w-full py-4 px-6 border-2 border-gray-300 text-gray-800 font-bold rounded-xl text-center hover:bg-gray-50 transition-all duration-200"
+                  whileHover={{ scale: 1 }}
+                  whileTap={{ scale: 0.99 }}
                   aria-label="Send an email to discuss project details"
                 >
                   <span className="flex items-center justify-center">
