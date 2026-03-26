@@ -1,5 +1,5 @@
 import { Link, Outlet, useLocation } from 'react-router-dom';
-import { Menu, X, Home, Mail, ChevronUp, Sparkles, Target, Code, Rocket, Github, Youtube, Linkedin } from 'lucide-react';
+import { Menu, X, Home, Mail, ChevronUp, Sparkles, Target, Code, Rocket, PlayCircle, Briefcase } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -18,9 +18,9 @@ const MainLayout = () => {
   ];
 
   const socialLinks = [
-    { icon: Github, href: 'https://github.com/openketzal-star', label: 'GitHub', color: 'hover:bg-gray-800/20' },
-    { icon: Youtube, href: 'https://youtube.com/@jhomer', label: 'YouTube', color: 'hover:bg-red-500/20' },
-    { icon: Linkedin, href: 'https://linkedin.com/in/jhomer', label: 'LinkedIn', color: 'hover:bg-blue-700/20' },
+    { icon: Code, href: 'https://github.com/openketzal-star', label: 'GitHub', color: 'hover:bg-gray-800/20' },
+    { icon: PlayCircle, href: 'https://youtube.com/@jhomer', label: 'YouTube', color: 'hover:bg-red-500/20' },
+    { icon: Briefcase, href: 'https://linkedin.com/in/jhomer', label: 'LinkedIn', color: 'hover:bg-blue-700/20' },
     { icon: Mail, href: 'mailto:openketzal@gmail.com', label: 'Email', color: 'hover:bg-green-600/20' },
   ];
 
