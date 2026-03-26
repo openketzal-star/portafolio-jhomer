@@ -61,6 +61,8 @@ export default {
         'gradient': 'gradient 8s ease infinite',
         'shimmer': 'shimmer 2s infinite',
         'typewriter': 'typewriter 3s steps(40) 1s 1 normal both',
+        'spin-slow': 'spin 3s linear infinite',
+        'ping-slow': 'ping 2s cubic-bezier(0, 0, 0.2, 1) infinite',
       },
       keyframes: {
         fadeIn: {

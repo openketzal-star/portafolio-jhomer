@@ -101,10 +101,22 @@ const Home = () => {
 
   return (
     <div className="space-y-24 md:space-y-32">
+      {/* BANNER GIGANTE - CAMBIO VISIBLE */}
+      <div className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 text-white text-center py-4 animate-pulse shadow-2xl">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-center space-x-4">
+            <Sparkles className="animate-spin-slow" size={24} />
+            <span className="text-2xl md:text-3xl font-bold">✨ ¡NUEVO DISEÑO TOTALMENTE RENOVADO! ✨</span>
+            <Sparkles className="animate-spin-slow" size={24} />
+          </div>
+          <p className="mt-2 text-lg opacity-90">Con efectos de partículas, animaciones avanzadas y mejoras UX/UI</p>
+        </div>
+      </div>
+
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-20">
+      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-32">
         <ParticlesBackground />
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-50/30 via-transparent to-secondary-50/30 dark:from-gray-900/50 dark:via-gray-900 dark:to-gray-900/50" />
+        <div className="absolute inset-0 bg-gradient-to-br from-pink-100/40 via-blue-100/20 to-purple-100/40 dark:from-gray-900/50 dark:via-gray-900 dark:to-gray-900/50" />
         <div className="relative z-10 container mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -112,24 +124,24 @@ const Home = () => {
             transition={{ duration: 0.8 }}
             className="max-w-6xl mx-auto"
           >
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 mb-6 animate-pulse-slow">
-              <Sparkles className="mr-2" size={16} />
-              <span className="font-medium">Transformando ideas en realidades digitales</span>
+            <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-pink-500 to-blue-500 text-white mb-8 animate-pulse-slow shadow-lg">
+              <Sparkles className="mr-3" size={20} />
+              <span className="font-bold text-lg">🚀 Transformando ideas en realidades digitales</span>
             </div>
-            <h1 className="text-5xl md:text-8xl font-bold mb-6 leading-tight">
-              <span className="block">Hola, soy </span>
-              <span className="text-gradient bg-gradient-to-r from-primary-600 to-accent-600">
-                <TypewriterText text="Jhomer" speed={100} delay={500} />
+            <h1 className="text-5xl md:text-8xl font-bold mb-8 leading-tight">
+              <span className="block text-gray-800 dark:text-gray-200">Hola, soy </span>
+              <span className="text-gradient bg-gradient-to-r from-pink-600 via-purple-600 to-blue-600 animate-gradient">
+                <TypewriterText text="JHOMER" speed={80} delay={300} />
               </span>
             </h1>
-            <p className="text-2xl md:text-3xl text-gray-700 dark:text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-2xl md:text-3xl text-gray-800 dark:text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
               <TypewriterText
                 text="Management & Marketing profesional aprendiendo programación con IA."
-                speed={30}
-                delay={1200}
+                speed={25}
+                delay={1000}
               />
               <br />
-              <span className="text-xl md:text-2xl text-gray-600 dark:text-gray-400">
+              <span className="text-xl md:text-2xl text-gray-700 dark:text-gray-400 mt-4 inline-block">
                 Creo aplicaciones impulsadas por IA y comparto el viaje en YouTube y TikTok.
               </span>
             </p>
@@ -141,24 +153,24 @@ const Home = () => {
             >
               <Link
                 to="/proyectos"
-                className="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-600 to-accent-600 text-white font-bold rounded-2xl hover:shadow-2xl hover:scale-105 transition-all duration-300"
+                className="group inline-flex items-center px-10 py-5 bg-gradient-to-r from-pink-600 to-purple-600 text-white font-bold rounded-2xl hover:shadow-2xl hover:scale-110 transition-all duration-300 shadow-xl"
               >
-                <span>Explorar Proyectos</span>
-                <ArrowRight className="ml-3 group-hover:translate-x-2 transition-transform" size={22} />
+                <span className="text-lg">🚀 Explorar Proyectos</span>
+                <ArrowRight className="ml-4 group-hover:translate-x-3 transition-transform" size={24} />
               </Link>
               <Link
                 to="/contacto"
-                className="group inline-flex items-center px-8 py-4 border-2 border-primary-600 dark:border-primary-400 text-primary-600 dark:text-primary-400 font-bold rounded-2xl hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:shadow-xl transition-all duration-300"
+                className="group inline-flex items-center px-10 py-5 border-3 border-pink-500 text-pink-600 dark:text-pink-400 font-bold rounded-2xl hover:bg-pink-50 dark:hover:bg-pink-900/20 hover:shadow-xl hover:scale-105 transition-all duration-300"
               >
-                <Zap className="mr-3 group-hover:rotate-12 transition-transform" size={20} />
-                <span>Colaborar Juntos</span>
+                <Zap className="mr-4 group-hover:rotate-180 transition-transform duration-500" size={22} />
+                <span className="text-lg">⚡ Colaborar Juntos</span>
               </Link>
             </motion.div>
           </motion.div>
         </div>
         <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce-slow">
-          <div className="w-6 h-10 border-2 border-gray-400 dark:border-gray-600 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-gray-400 dark:bg-gray-600 rounded-full mt-2" />
+          <div className="w-8 h-12 border-3 border-pink-500 rounded-full flex justify-center">
+            <div className="w-2 h-4 bg-gradient-to-b from-pink-500 to-purple-500 rounded-full mt-3 animate-pulse" />
           </div>
         </div>
       </section>
