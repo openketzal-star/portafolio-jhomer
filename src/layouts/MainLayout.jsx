@@ -108,7 +108,7 @@ const MainLayout = () => {
                   className={`p-2 rounded-full text-gray-600 dark:text-gray-300 hover:text-white transition-all duration-300 ${social.color} group`}
                   aria-label={social.label}
                 >
-                  <span className="text-xl group-hover:scale-110 transition-transform block">
+                  <span className="text-xl transition-transform block">
                     {social.emoji}
                   </span>
                 </a>
@@ -258,7 +258,7 @@ const MainLayout = () => {
           <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800 text-center text-gray-500 dark:text-gray-500 text-sm">
             <p>© {new Date().getFullYear()} Jhomer. Todos los derechos reservados.</p>
             <p className="mt-2">
-              Hecho con <span className="text-red-500">❤️</span>, React, Tailwind CSS, Framer Motion y un montón de café.
+              Hecho con <span className="text-yellow-500">⚡</span>, React, Tailwind CSS, Framer Motion y un montón de café.
             </p>
           </div>
         </div>
@@ -272,7 +272,7 @@ const MainLayout = () => {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.5 }}
             onClick={scrollToTop}
-            className="fixed bottom-8 right-8 z-40 p-3 rounded-full bg-gradient-to-r from-primary-600 to-accent-600 text-white shadow-2xl hover:shadow-3xl hover:scale-110 transition-all duration-300"
+            className="fixed bottom-8 right-8 z-40 p-3 rounded-full bg-gradient-to-r from-primary-600 to-accent-600 text-white shadow-2xl hover:shadow-3xl transition-all duration-300"
             aria-label="Scroll to top"
           >
             <ChevronUp size={24} />
