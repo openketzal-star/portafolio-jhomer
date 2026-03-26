@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { projects, categories, categoryColors } from '../../data/projects';
-import { ExternalLink, Github, Award, TrendingUp, Calendar, Building } from 'lucide-react';
+import { ExternalLink, Code, Award, TrendingUp, Calendar, Building } from 'lucide-react';
 
 const ProjectsSection = () => {
   const [projectsRef, projectsInView] = useInView({ triggerOnce: true, threshold: 0.1 });
@@ -277,7 +277,7 @@ const ProjectsSection = () => {
                         whileTap={{ scale: 0.98 }}
                         aria-label={`View source code of ${project.title}`}
                       >
-                        <Github size={18} className="mr-2" />
+                        <Code size={18} className="mr-2" />
                         Código
                       </motion.a>
                     </div>
