@@ -82,13 +82,13 @@ const Home = () => {
               Construyo aplicaciones que resuelven problemas reales de negocio mediante código y algoritmos.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link
-                to="#projects"
+              <a
+                href="#projects"
                 className="inline-flex items-center px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-colors"
               >
                 <span>Ver proyectos con IA</span>
                 <ArrowRight className="ml-2" size={18} />
-              </Link>
+              </a>
               <Link
                 to="/contacto"
                 className="inline-flex items-center px-6 py-3 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-medium rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
@@ -156,13 +156,13 @@ const Home = () => {
               <p className="text-gray-600 dark:text-gray-400 mb-4">
                 {service.description}
               </p>
-              <Link
-                to="#projects"
+              <a
+                href="#projects"
                 className="inline-flex items-center text-primary-600 dark:text-primary-400 font-medium text-sm"
               >
                 Ver casos de uso
                 <ArrowRight className="ml-1" size={16} />
-              </Link>
+              </a>
             </motion.div>
           ))}
         </motion.div>
@@ -264,12 +264,12 @@ const Home = () => {
               <Mail className="mr-2" size={20} />
               Iniciar Conversación
             </Link>
-            <Link
-              to="#projects"
+            <a
+              href="#projects"
               className="inline-flex items-center px-8 py-3 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-medium rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
             >
               Explorar más proyectos
-            </Link>
+            </a>
           </div>
         </motion.div>
       </section>
