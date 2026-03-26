@@ -14,6 +14,8 @@ const MainLayout = () => {
   ];
 
   const socialLinks = [
+    { emoji: '📺', href: '#', label: 'YouTube (próximamente)' },
+    { emoji: '🎵', href: '#', label: 'TikTok (próximamente)' },
     { emoji: '🐙', href: 'https://github.com/jhomer', label: 'GitHub' },
     { emoji: '💼', href: 'https://linkedin.com/in/jhomer', label: 'LinkedIn' },
     { emoji: '✉️', href: 'mailto:jhomer@example.com', label: 'Email' },
@@ -117,7 +119,7 @@ const MainLayout = () => {
                 Jhomer<span className="text-primary-500">.</span>
               </div>
               <p className="text-gray-600 dark:text-gray-400">
-                Desarrollador & Creador de Contenido
+                Management & Marketing | Aprendiz de IA & Creador de Contenido
               </p>
             </div>
             <div className="flex space-x-4">

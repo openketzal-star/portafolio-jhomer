@@ -7,60 +7,60 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: 'Portafolio Personal',
-      description: 'Sitio web personal para mostrar proyectos y habilidades. Diseño moderno y responsive.',
-      technologies: ['React', 'Tailwind CSS', 'Vite', 'React Router'],
-      category: 'web',
-      demoUrl: 'https://portafolio-jhomer.vercel.app',
-      githubUrl: 'https://github.com/jhomer/portafolio',
+      title: 'Asistente de Marketing con IA',
+      description: 'Herramienta que genera estrategias de contenido y copy usando GPT-4, analizando tendencias.',
+      technologies: ['Python', 'OpenAI API', 'Streamlit', 'Pandas'],
+      category: 'ia',
+      demoUrl: '#',
+      githubUrl: '#',
       featured: true,
     },
     {
       id: 2,
-      title: 'App de Gestión de Proyectos',
-      description: 'Aplicación web completa para gestión de proyectos con equipo en tiempo real.',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Socket.io'],
-      category: 'web',
+      title: 'Curso Interactivo de IA',
+      description: 'Plataforma educativa con ejercicios prácticos de programación con IA, usando notebooks interactivos.',
+      technologies: ['Jupyter', 'FastAPI', 'React', 'Tailwind'],
+      category: 'ia',
       demoUrl: '#',
       githubUrl: '#',
       featured: true,
     },
     {
       id: 3,
-      title: 'Sistema de Recomendación',
-      description: 'Algoritmo de recomendación basado en machine learning para contenido personalizado.',
-      technologies: ['Python', 'Scikit-learn', 'FastAPI', 'React'],
-      category: 'ai',
+      title: 'Dashboard de Métricas de Redes',
+      description: 'Panel de control para monitorear métricas de YouTube, TikTok y otras redes sociales.',
+      technologies: ['React', 'Chart.js', 'Node.js', 'YouTube API'],
+      category: 'marketing',
       demoUrl: '#',
       githubUrl: '#',
       featured: false,
     },
     {
       id: 4,
-      title: 'App Móvil de Fitness',
-      description: 'Aplicación móvil para seguimiento de rutinas de ejercicio y nutrición.',
-      technologies: ['React Native', 'Firebase', 'Redux', 'Chart.js'],
-      category: 'mobile',
+      title: 'Generador de Thumbnails con IA',
+      description: 'Aplicación web que genera thumbnails atractivos para videos usando IA generativa.',
+      technologies: ['Midjourney API', 'Python', 'Flask', 'JavaScript'],
+      category: 'herramientas',
       demoUrl: '#',
       githubUrl: '#',
       featured: false,
     },
     {
       id: 5,
-      title: 'Dashboard Analytics',
-      description: 'Panel de control para visualización de datos y métricas empresariales.',
-      technologies: ['Vue.js', 'D3.js', 'Express.js', 'PostgreSQL'],
-      category: 'web',
+      title: 'Sistema de Recomendación de Contenido',
+      description: 'Algoritmo que sugiere temas de video basado en tendencias y engagement histórico.',
+      technologies: ['Python', 'Scikit-learn', 'FastAPI', 'React'],
+      category: 'ia',
       demoUrl: '#',
       githubUrl: '#',
       featured: false,
     },
     {
       id: 6,
-      title: 'Chatbot Inteligente',
-      description: 'Chatbot conversacional para atención al cliente usando NLP.',
-      technologies: ['Python', 'TensorFlow', 'Dialogflow', 'React'],
-      category: 'ai',
+      title: 'Prototipador de UX con IA',
+      description: 'Herramienta que convierte descripciones en prototipos de interfaz usando IA.',
+      technologies: ['Figma API', 'OpenAI', 'Node.js', 'Vue.js'],
+      category: 'uxui',
       demoUrl: '#',
       githubUrl: '#',
       featured: false,
@@ -69,9 +69,10 @@ const Projects = () => {
 
   const categories = [
     { id: 'all', label: 'Todos' },
-    { id: 'web', label: 'Web' },
-    { id: 'mobile', label: 'Móvil' },
-    { id: 'ai', label: 'IA/ML' },
+    { id: 'ia', label: 'IA' },
+    { id: 'marketing', label: 'Marketing' },
+    { id: 'uxui', label: 'UX/UI' },
+    { id: 'herramientas', label: 'Herramientas' },
   ];
 
   const filteredProjects = filter === 'all' 
@@ -84,7 +85,7 @@ const Projects = () => {
       <div className="text-center">
         <h1 className="text-4xl md:text-5xl font-bold mb-4">Mis Proyectos</h1>
         <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-          Una colección de mis trabajos más recientes y destacados. Cada proyecto representa un desafío único y una solución innovadora.
+          Proyectos donde combino IA, marketing y desarrollo. Cada uno es un experimento práctico de aprendizaje en público.
         </p>
       </div>
 
@@ -117,9 +118,10 @@ const Projects = () => {
           >
             {/* Project Image */}
             <div className={`h-48 ${
-              project.category === 'web' ? 'bg-gradient-to-r from-blue-500 to-cyan-500' :
-              project.category === 'mobile' ? 'bg-gradient-to-r from-green-500 to-emerald-500' :
-              'bg-gradient-to-r from-purple-500 to-pink-500'
+              project.category === 'ia' ? 'bg-gradient-to-r from-blue-500 to-cyan-500' :
+              project.category === 'marketing' ? 'bg-gradient-to-r from-green-500 to-emerald-500' :
+              project.category === 'uxui' ? 'bg-gradient-to-r from-purple-500 to-pink-500' :
+              'bg-gradient-to-r from-orange-500 to-red-500'
             }`}></div>
 
             {/* Project Content */}

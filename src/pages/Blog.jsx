@@ -9,63 +9,63 @@ const Blog = () => {
   const posts = [
     {
       id: 1,
-      title: 'Cómo construir un portafolio con React y Tailwind CSS',
-      excerpt: 'Guía paso a paso para crear un portafolio personal moderno y responsive usando las mejores prácticas.',
+      title: 'Cómo empecé a aprender IA sin background técnico',
+      excerpt: 'Mi ruta de aprendizaje: de management a programación con IA, recursos y estrategias que me funcionaron.',
       date: '2024-03-15',
-      readTime: '8 min',
-      tags: ['React', 'Tailwind', 'Guía'],
+      readTime: '10 min',
+      tags: ['IA', 'Aprendizaje', 'Carrera'],
       featured: true,
-      slug: 'portafolio-react-tailwind',
+      slug: 'aprender-ia-sin-background',
     },
     {
       id: 2,
-      title: 'Introducción a React Server Components',
-      excerpt: 'Comprendiendo el nuevo paradigma de componentes en React y cómo afecta el rendimiento de aplicaciones.',
+      title: 'Herramientas de IA para marketing que realmente uso',
+      excerpt: 'Un recorrido por las herramientas de IA que integro en mi flujo de trabajo de marketing y creación de contenido.',
       date: '2024-02-28',
-      readTime: '12 min',
-      tags: ['React', 'RSC', 'Performance'],
+      readTime: '8 min',
+      tags: ['IA', 'Marketing', 'Herramientas'],
       featured: true,
-      slug: 'react-server-components',
+      slug: 'herramientas-ia-marketing',
     },
     {
       id: 3,
-      title: 'Optimización de imágenes en la web moderna',
-      excerpt: 'Técnicas y herramientas para reducir el tamaño de imágenes sin perder calidad.',
+      title: 'UX para aplicaciones de IA: principios básicos',
+      excerpt: 'Cómo diseñar interfaces que hagan la IA accesible y comprensible para usuarios no técnicos.',
       date: '2024-02-10',
-      readTime: '6 min',
-      tags: ['Web Performance', 'Optimización', 'Imágenes'],
+      readTime: '12 min',
+      tags: ['UX', 'IA', 'Diseño'],
       featured: false,
-      slug: 'optimizacion-imagenes-web',
+      slug: 'ux-aplicaciones-ia',
     },
     {
       id: 4,
-      title: 'Patrones de diseño en aplicaciones React',
-      excerpt: 'Los patrones más útiles para mantener código limpio y escalable en proyectos grandes.',
+      title: 'De marketing a programación: cómo aprovechar tu experiencia previa',
+      excerpt: 'Las habilidades de marketing que me han servido en mi transición hacia el desarrollo con IA.',
       date: '2024-01-25',
-      readTime: '10 min',
-      tags: ['React', 'Patrones', 'Arquitectura'],
+      readTime: '7 min',
+      tags: ['Carrera', 'Marketing', 'Transición'],
       featured: false,
-      slug: 'patrones-diseno-react',
+      slug: 'marketing-a-programacion',
     },
     {
       id: 5,
-      title: 'De cero a deployed con Vercel',
-      excerpt: 'Cómo llevar tu proyecto de desarrollo local a producción en minutos.',
+      title: 'Creación de contenido técnico para YouTube y TikTok',
+      excerpt: 'Estrategias para producir videos educativos sobre tecnología que realmente atraigan audiencia.',
       date: '2024-01-12',
-      readTime: '5 min',
-      tags: ['DevOps', 'Vercel', 'Deploy'],
+      readTime: '9 min',
+      tags: ['Contenido', 'YouTube', 'TikTok'],
       featured: false,
-      slug: 'deploy-vercel',
+      slug: 'contenido-tecnico-videos',
     },
     {
       id: 6,
-      title: 'Gestión de estado con Zustand vs Redux',
-      excerpt: 'Comparativa práctica entre dos de las librerías más populares para gestión de estado en React.',
+      title: 'Prototipando con IA: de la idea a un MVP en una semana',
+      excerpt: 'Cómo uso herramientas de IA para acelerar la validación de ideas y creación de prototipos funcionales.',
       date: '2023-12-20',
-      readTime: '15 min',
-      tags: ['React', 'State Management', 'Comparativa'],
+      readTime: '11 min',
+      tags: ['IA', 'Prototipado', 'MVP'],
       featured: false,
-      slug: 'zustand-vs-redux',
+      slug: 'prototipado-ia-mvp',
     },
   ];
 
@@ -84,8 +84,8 @@ const Blog = () => {
       <div className="text-center">
         <h1 className="text-4xl md:text-5xl font-bold mb-4">Blog</h1>
         <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-          Comparto lo que aprendo sobre desarrollo, diseño, productividad y tecnología. 
-          Tutoriales, reflexiones y guías prácticas.
+          Comparto mi aprendizaje sobre programación con IA, marketing digital, UX/UI y crecimiento profesional. 
+          Tutoriales, reflexiones y guías prácticas desde la perspectiva de un aprendiz.
         </p>
       </div>
 

@@ -3,29 +3,29 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
   const stats = [
-    { label: 'Proyectos Completados', value: '10+' },
-    { label: 'Años de Experiencia', value: '3+' },
-    { label: 'Clientes Satisfechos', value: '20+' },
-    { label: 'Tecnologías Dominadas', value: '15+' },
+    { label: 'Proyectos con IA', value: '5+' },
+    { label: 'Años en Marketing', value: '4+' },
+    { label: 'Videos Producidos', value: '50+' },
+    { label: 'Herramientas de IA', value: '10+' },
   ];
 
   const services = [
     {
       icon: Code,
-      title: 'Desarrollo de Apps',
-      description: 'Aplicaciones web y móviles modernas con React, Node.js y más.',
+      title: 'Desarrollo con IA',
+      description: 'Aplicaciones web y móviles potenciadas por IA, usando OpenAI, LangChain y más.',
       color: 'bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400',
     },
     {
       icon: Video,
-      title: 'Creación de Contenido',
-      description: 'Tutoriales, reviews y contenido técnico para YouTube y redes.',
+      title: 'Contenido Educativo',
+      description: 'Tutoriales, guías y experiencias sobre programación con IA en YouTube y TikTok.',
       color: 'bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400',
     },
     {
       icon: Search,
-      title: 'Investigación de Mercado',
-      description: 'Análisis de competencia, tendencias y oportunidades de negocio.',
+      title: 'Estrategia Digital',
+      description: 'Marketing, análisis de mercado y estrategias de crecimiento para productos digitales.',
       color: 'bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400',
     },
   ];
@@ -39,8 +39,9 @@ const Home = () => {
             Hola, soy <span className="text-primary-600 dark:text-primary-400">Jhomer</span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8">
-            Desarrollador de aplicaciones, creador de contenido y explorador de oportunidades digitales.
-            Transformo ideas en productos funcionales y comparto el conocimiento en el camino.
+            Management & Marketing profesional aprendiendo programación con IA.
+            Creo aplicaciones impulsadas por IA y comparto el viaje en YouTube y TikTok.
+            Transformo ideas en productos digitales y contenido educativo.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link
@@ -121,23 +122,23 @@ const Home = () => {
           <div className="border border-gray-200 dark:border-gray-800 rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
             <div className="h-48 bg-gradient-to-r from-blue-500 to-purple-500"></div>
             <div className="p-6">
-              <h3 className="text-xl font-bold mb-2">Portafolio Personal</h3>
+              <h3 className="text-xl font-bold mb-2">Asistente de Marketing con IA</h3>
               <p className="text-gray-600 dark:text-gray-400 mb-4">
-                Este mismo sitio web, construido con React, Tailwind CSS y Vite.
+                Herramienta que genera estrategias de contenido y copy usando GPT-4, analizando tendencias.
               </p>
               <div className="flex flex-wrap gap-2 mb-4">
                 <span className="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-full text-sm">
-                  React
+                  Python
                 </span>
                 <span className="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 rounded-full text-sm">
-                  Tailwind
+                  OpenAI
                 </span>
                 <span className="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 rounded-full text-sm">
-                  Vite
+                  Streamlit
                 </span>
               </div>
               <Link
-                to="/proyectos/portafolio"
+                to="/proyectos/asistente-ia"
                 className="text-primary-600 dark:text-primary-400 font-medium hover:underline"
               >
                 Ver detalles →
@@ -149,23 +150,23 @@ const Home = () => {
           <div className="border border-gray-200 dark:border-gray-800 rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
             <div className="h-48 bg-gradient-to-r from-green-500 to-teal-500"></div>
             <div className="p-6">
-              <h3 className="text-xl font-bold mb-2">App de Gestión</h3>
+              <h3 className="text-xl font-bold mb-2">Curso Interactivo de IA</h3>
               <p className="text-gray-600 dark:text-gray-400 mb-4">
-                Aplicación web para gestión de proyectos con equipo en tiempo real.
+                Plataforma educativa con ejercicios prácticos de programación con IA, usando notebooks interactivos.
               </p>
               <div className="flex flex-wrap gap-2 mb-4">
                 <span className="px-3 py-1 bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 rounded-full text-sm">
-                  Node.js
+                  Jupyter
                 </span>
                 <span className="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-full text-sm">
-                  React
+                  FastAPI
                 </span>
                 <span className="px-3 py-1 bg-yellow-100 dark:bg-yellow-900/30 text-yellow-600 dark:text-yellow-400 rounded-full text-sm">
-                  MongoDB
+                  React
                 </span>
               </div>
               <Link
-                to="/proyectos/app-gestion"
+                to="/proyectos/curso-ia"
                 className="text-primary-600 dark:text-primary-400 font-medium hover:underline"
               >
                 Ver detalles →

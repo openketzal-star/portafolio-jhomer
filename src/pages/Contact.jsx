@@ -63,8 +63,8 @@ const Contact = () => {
       <div className="text-center">
         <h1 className="text-4xl md:text-5xl font-bold mb-4">Contacto</h1>
         <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-          ¿Tienes un proyecto en mente? ¿Quieres colaborar? ¿O simplemente quieres saludar?
-          Estoy aquí para escucharte.
+          ¿Interesado en colaboraciones de IA y marketing? ¿Quieres discutir una idea o proyecto?
+          Estoy aquí para conversar sobre tecnología, contenido y estrategia.
         </p>
       </div>
 
@@ -242,9 +242,9 @@ const Contact = () => {
             </p>
           </div>
           <div className="border border-gray-200 dark:border-gray-800 rounded-xl p-6">
-            <h3 className="font-bold text-lg mb-2">¿Ofreces mantenimiento post-desarrollo?</h3>
+            <h3 className="font-bold text-lg mb-2">¿Ofreces consultoría de IA para marketing?</h3>
             <p className="text-gray-600 dark:text-gray-400">
-              Sí, ofrezco planes de mantenimiento mensual para proyectos completados.
+              Sí, asesoro en la integración de herramientas de IA en estrategias de marketing y contenido.
             </p>
           </div>
         </div>
