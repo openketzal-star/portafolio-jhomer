@@ -1,8 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import MainLayout from './layouts/MainLayout';
-import Home from './pages/Home';
-import About from './pages/About';
-import Contact from './pages/Contact';
+import LandingPage from './pages/LandingPage';
 import './App.css';
 
 function App() {
@@ -10,9 +8,10 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<MainLayout />}>
-          <Route index element={<Home />} />
-          <Route path="sobre-mi" element={<About />} />
-          <Route path="contacto" element={<Contact />} />
+          <Route index element={<LandingPage />} />
+          {/* Redirecciones para mantener compatibilidad con enlaces existentes */}
+          <Route path="sobre-mi" element={<LandingPage />} />
+          <Route path="contacto" element={<LandingPage />} />
         </Route>
       </Routes>
     </Router>

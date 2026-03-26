@@ -1,5 +1,5 @@
 import { Link, Outlet, useLocation } from 'react-router-dom';
-import { Menu, X, Home, User, Mail, ChevronUp, Sparkles } from 'lucide-react';
+import { Menu, X, Home, Mail, ChevronUp, Sparkles, Target, Code, Rocket, Github, Youtube, Linkedin } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -10,17 +10,18 @@ const MainLayout = () => {
   const location = useLocation();
 
   const navItems = [
-    { path: '/', label: 'Inicio', icon: Home },
-    { path: '/sobre-mi', label: 'Sobre mí', icon: User },
-    { path: '/contacto', label: 'Contacto', icon: Mail },
+    { path: '#inicio', label: 'Inicio', icon: Home },
+    { path: '#soluciones', label: 'Soluciones', icon: Target },
+    { path: '#servicios', label: 'Servicios', icon: Code },
+    { path: '#proyectos', label: 'Proyectos', icon: Rocket },
+    { path: '#contacto', label: 'Contacto', icon: Mail },
   ];
 
   const socialLinks = [
-    { emoji: '📺', href: '#', label: 'YouTube (próximamente)', color: 'hover:bg-red-500/20' },
-    { emoji: '🎵', href: '#', label: 'TikTok (próximamente)', color: 'hover:bg-pink-500/20' },
-    { emoji: '🐙', href: 'https://github.com/jhomer', label: 'GitHub', color: 'hover:bg-gray-800/20' },
-    { emoji: '💼', href: 'https://linkedin.com/in/jhomer', label: 'LinkedIn', color: 'hover:bg-blue-700/20' },
-    { emoji: '✉️', href: 'mailto:jhomer@example.com', label: 'Email', color: 'hover:bg-green-600/20' },
+    { icon: Github, href: 'https://github.com/openketzal-star', label: 'GitHub', color: 'hover:bg-gray-800/20' },
+    { icon: Youtube, href: 'https://youtube.com/@jhomer', label: 'YouTube', color: 'hover:bg-red-500/20' },
+    { icon: Linkedin, href: 'https://linkedin.com/in/jhomer', label: 'LinkedIn', color: 'hover:bg-blue-700/20' },
+    { icon: Mail, href: 'mailto:openketzal@gmail.com', label: 'Email', color: 'hover:bg-green-600/20' },
   ];
 
   useEffect(() => {
@@ -35,6 +36,33 @@ const MainLayout = () => {
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const scrollToSection = (hash) => {
+    if (hash === '#inicio') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+    
+    const element = document.querySelector(hash);
+    if (element) {
+      const offset = 80; // Ajuste para el header fijo
+      const elementTop = element.getBoundingClientRect().top + window.pageYOffset;
+      window.scrollTo({ top: elementTop - offset, behavior: 'smooth' });
+    }
+    
+    // Cerrar menú móvil si está abierto
+    setIsMenuOpen(false);
+  };
+
+  const handleNavClick = (e, path) => {
+    e.preventDefault();
+    if (path.startsWith('#')) {
+      scrollToSection(path);
+    } else {
+      // Para rutas normales (por si acaso)
+      window.location.href = path;
+    }
   };
 
   return (
@@ -69,11 +97,11 @@ const MainLayout = () => {
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-2">
               {navItems.map((item) => {
-                const isActive = location.pathname === item.path;
+                const isActive = location.hash === item.path;
                 return (
-                  <Link
+                  <button
                     key={item.path}
-                    to={item.path}
+                    onClick={(e) => handleNavClick(e, item.path)}
                     className={`relative px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${
                       isActive
                         ? 'text-white bg-gradient-to-r from-primary-600 to-accent-600 shadow-lg'
@@ -92,7 +120,7 @@ const MainLayout = () => {
                         transition={{ type: 'spring', stiffness: 300, damping: 30 }}
                       />
                     )}
-                  </Link>
+                  </button>
                 );
               })}
             </nav>
@@ -108,9 +136,7 @@ const MainLayout = () => {
                   className={`p-2 rounded-full text-gray-600 dark:text-gray-300 hover:text-white transition-all duration-300 ${social.color} group`}
                   aria-label={social.label}
                 >
-                  <span className="text-xl transition-transform block">
-                    {social.emoji}
-                  </span>
+                  <social.icon size={20} className="transition-transform group-hover:scale-110" />
                 </a>
               ))}
             </div>
@@ -140,21 +166,23 @@ const MainLayout = () => {
             <div className="container mx-auto px-4 py-6">
               <nav className="flex flex-col space-y-4">
                 {navItems.map((item) => {
-                  const isActive = location.pathname === item.path;
+                  const isActive = location.hash === item.path;
                   return (
-                    <Link
+                    <button
                       key={item.path}
-                      to={item.path}
+                      onClick={(e) => {
+                        handleNavClick(e, item.path);
+                        setIsMenuOpen(false);
+                      }}
                       className={`flex items-center space-x-3 px-4 py-3 rounded-xl text-lg font-medium transition-colors ${
                         isActive
                           ? 'bg-gradient-to-r from-primary-600 to-accent-600 text-white'
                           : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'
                       }`}
-                      onClick={() => setIsMenuOpen(false)}
                     >
                       <item.icon size={20} />
                       <span>{item.label}</span>
-                    </Link>
+                    </button>
                   );
                 })}
                 <div className="flex justify-center space-x-4 pt-6">
@@ -167,7 +195,7 @@ const MainLayout = () => {
                       className={`p-3 rounded-full text-gray-600 dark:text-gray-300 hover:text-white transition-colors ${social.color}`}
                       aria-label={social.label}
                     >
-                      <span className="text-2xl">{social.emoji}</span>
+                      <social.icon size={24} />
                     </a>
                   ))}
                 </div>
@@ -210,7 +238,7 @@ const MainLayout = () => {
                     className={`p-2 rounded-full text-gray-600 dark:text-gray-300 hover:text-white transition-colors ${social.color}`}
                     aria-label={social.label}
                   >
-                    <span className="text-xl">{social.emoji}</span>
+                    <social.icon size={22} />
                   </a>
                 ))}
               </div>
@@ -221,13 +249,13 @@ const MainLayout = () => {
                 <ul className="space-y-3">
                   {navItems.map((item) => (
                     <li key={item.path}>
-                      <Link
-                        to={item.path}
+                      <button
+                        onClick={(e) => handleNavClick(e, item.path)}
                         className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors flex items-center space-x-2"
                       >
                         <item.icon size={16} />
                         <span>{item.label}</span>
-                      </Link>
+                      </button>
                     </li>
                   ))}
                 </ul>
